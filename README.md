@@ -1,3 +1,18 @@
+<h3>Replacing luck points with inspiration dice</h3>
+What are inspiration dice?
+
+They replace the standard inspiration system.
+A player can be awarded inspiration by the DM or being nominated by other players.
+If aplayer has no inspiration they will receive a d4 inspiration die.
+If a player already has aninspiration die and receives inspiration again thesize of the die increases e.g. d4→d6.
+At the start of every session every player increases thesize of their current inspiration die by one.
+A player can use their inspiration die to add to any of their own attacks, skill check or savingthrows.
+On a success the entire skill die is consumed and on a failure the size of the die is reduced by one.
+If a player is unconscious they can use theirinspiration die to assist an ally.
+
+I found a very good module for inspiration points, so I am shamelessly stealing that to learn how to make my first module.
+
+
 <h3>Updates</h3>
 <p>
   0.0.6
