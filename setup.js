@@ -1,5 +1,5 @@
 import { InspirationDiceSettings } from './scripts/settings.js';
-import { InspirationDice } from './scripts/luckpoints.js';
+import { InspirationDice } from './scripts/inspirationdice.js';
 
 Hooks.once('init', async function () {
 	InspirationDiceSettings.registerSettings();
