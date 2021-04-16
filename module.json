@@ -3,7 +3,7 @@
     "title": "Inspiration Dice",
     "description": "An alternative to inspiration. The intent of the module is to give your players inspiration dice for playing their character. The dice increases in size .",
     "author": "gizmo404",
-    "version": "0.0.4",
+    "version": "0.0.1",
     "minimumCoreVersion": "0.7.9",
     "compatibleCoreVersion": "0.7.9",
     "esmodules": ["setup.js"],
@@ -16,7 +16,7 @@
         "path": "lang/en.json"
       }
     ],
-    "url": "https://github.com/gizmo404/inspirationdice",    
+    "url": "https://github.com/gizmo404/inspirationdice",
     "manifest":"https://raw.githubusercontent.com/gizmo404/inspirationdice/master/module.json",
     "download":"https://github.com/gizmo404/inspirationdice/archive/master.zip"
   }

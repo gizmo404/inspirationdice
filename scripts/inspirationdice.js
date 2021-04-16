@@ -1,9 +1,9 @@
 export class InspirationDice {
-	static async onRenderActorSheet(dndSheet, html) {
+	static async onRenderActorSheet(dndSheet, html){
 		let inspirationDiceSettings = CONFIG.inspirationDiceSettings;
 		let actorPoints = dndSheet.object.getFlag('inspirationdice', 'currentInspirationDice');
-		inspirationDiceSettings.currentSettings.numberOfPoints = actorPoints === undefined ? 0 : actorPoints;		
-		
+		inspirationDiceSettings.currentSettings.numberOfPoints = actorPoints === undefined ? 0 : actorPoints;
+
 		let sheet = dndSheet.constructor.name;
 		inspirationDiceSettings.currentSettings.isGM = game.user.isGM;
 		inspirationDiceSettings.currentSettings.actorAppId = dndSheet.appId;
@@ -24,58 +24,97 @@ export class InspirationDice {
 				centerPane = html.find("ul[class='attributes']");
 				break;
 		}
-		
+
 		if(centerPane) centerPane[sheetIndex].insertAdjacentHTML('afterend', template);
-		
+
 		$('.lpOpenConsume-' + dndSheet.appId).on('click', async () => {
 			this.openConsumeInput(dndSheet.appId);
 		});
-		if (game.user.isGM) {
-			$('.lpGmRoll-' + dndSheet.appId).on('click', async () => {
-				this.gmRoll(dndSheet);
-			});
-		}
-		$('.lpHowManyPoints-' + dndSheet.appId).keypress(async (e) => {
-			if (e.which == 13) {
-				this.consumeInspirationDice(e.target, dndSheet);
-			}
+		$('.idPlayerDieIncrease-' + dndSheet.appId).on('click', async () => {
+			this.playerDieIncrease(dndSheet);
+		});
+		$('.idPlayerDieDecrease-' + dndSheet.appId).on('click', async () => {
+			this.playerDieDecrease(dndSheet);
+		});
+		$('.idPlayerDieClear-' + dndSheet.appId).on('click', async () => {
+			this.PlayerDieClear(dndSheet);
+		});
+		$('.idPlayerRoll-' + dndSheet.appId).on('click', async () => {
+			this.playerRoll(dndSheet);
 		});
 	}
 
-	static async gmRoll(dndSheet) {
-		let roll = new Roll("1d6");
-		console.log(roll.parts);
-		roll.roll();
-		ChatMessage.create({content: `${dndSheet.entity.name} just received ${roll.total} Inspiration Dice!`}, {chatBubble : true});
-		let result = roll.total;
-		var currentPoints = dndSheet.object.getFlag('inspirationdice', 'currentInspirationDice');
-
-		let newResult = result + (currentPoints === undefined ? 0 : currentPoints);
-		await dndSheet.object.setFlag('inspirationdice', 'currentInspirationDice', newResult);
-	}
-
-	static openConsumeInput(appId) {
-		let inspirationDiceSettings = CONFIG.inspirationDiceSettings;
-		if (inspirationDiceSettings.currentSettings.numberOfPoints > 0) {
-			$('.lpHowManyPoints-' + appId).toggle();
-		} else {
-			alert('You do not have any inspiration dice to consume.');
+  static async playerRoll(dndSheet) {
+		var dieSize = dndSheet.object.getFlag('inspirationdice', 'currentInspirationDice');
+	 	if (dieSize == 0) {
+			alert('You do not have an inspiration die to consume.');
+		}
+		else {
+			let str = '1d';
+			str +=dieSize;
+			let roll = new Roll(str);
+			console.log(roll.parts);
+			roll.roll();
+			ChatMessage.create({content: `${dndSheet.entity.name} just rolled ${roll.total} on their D`+ dieSize + ` Inspiration Die!`}, {chatBubble : true});
 		}
 	}
 
-	static async consumeInspirationDice(target, dndSheet) {
-		let actorPoints = dndSheet.object.getFlag('inspirationdice', 'currentInspirationDice');
-		let parsedValue = parseInt(target.value, 10);
-		let value = (isNaN(parsedValue) || parsedValue === "")? 0 : parsedValue;
-		if(value === 0){
-			alert('Please enter the number of points you would like to use.')
+	static async playerDieIncrease(dndSheet) {
+		var dieSize = dndSheet.object.getFlag('inspirationdice', 'currentInspirationDice');
+		switch (dieSize) {
+			case 0:
+				dieSize = 4;
+				break;
+			case 4:
+				dieSize = 6;
+				break;
+			case 6:
+				dieSize = 8;
+				break;
+			case 8:
+				dieSize = 10;
+				break;
+			case 10:
+				dieSize = 12;
+				break;
+			case 12:
+				dieSize = 20;
+				break;
+			case 20:
+				break;
 		}
-		else if (value > actorPoints) {
-			alert('You do not have enough inspiration dice to consume.');
-		} else {
-			let newPoints = actorPoints - value;
-			await dndSheet.object.setFlag('inspirationdice', 'currentInspirationDice', newPoints);
-			ChatMessage.create({content: `${dndSheet.entity.name} just consumed ${value} Inspiration Dice! ${dndSheet.entity.name} has ${newPoints} left.`}, {chatBubble : true});
-		}
+		 	await dndSheet.object.setFlag('inspirationdice', 'currentInspirationDice', dieSize);
 	}
+
+	static async playerDieDecrease(dndSheet) {
+		var dieSize = dndSheet.object.getFlag('inspirationdice', 'currentInspirationDice');
+		switch (dieSize) {
+			case 0:
+				break;
+			case 4:
+				dieSize = 0;
+				break;
+			case 6:
+				dieSize = 4;
+				break;
+			case 8:
+				dieSize = 6;
+				break;
+			case 10:
+				dieSize = 8;
+				break;
+			case 12:
+				dieSize = 10;
+				break;
+			case 20:
+				dieSize = 12;
+				break;
+		}
+			await dndSheet.object.setFlag('inspirationdice', 'currentInspirationDice', dieSize);
+	}
+
+	static async PlayerDieClear(dndSheet) {
+		 	await dndSheet.object.setFlag('inspirationdice', 'currentInspirationDice', 0);
+	}
+
 }
