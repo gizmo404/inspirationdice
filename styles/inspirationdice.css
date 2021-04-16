@@ -1,0 +1,40 @@
+.inspiration-dice {    
+    margin-top: 5px;
+    border: 1px solid var(--default-faint-color);;   
+}
+
+.inspiration-dice > .inspiration-dice-row {
+    margin-left: 5px;
+}
+.inspiration-dice > .inspiration-dice-row > .inspiration-dice-action-items {
+    text-align: right;
+    font-size: 15px; 
+}
+
+.inspiration-dice > .inspiration-dice-row > .inspiration-dice-action-items > .item-image {
+    margin-right: .5em;
+}
+
+.inspiration-dice > .inspiration-dice-row > .inspiration-dice-action-items > .inspiration-dice-input {
+    margin-bottom:5px;
+}
+
+.inspiration-dice > .inspiration-dice-row > .number-inspiration-dice {    
+    font-size: 18px; 
+}
+
+.inspiration-dice > .inspiration-dice-title {
+    margin-left: 5px; 
+    flex: auto;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4b4a44;
+    font-family: "Signika", sans-serif;
+}
+.inspiration-dice > .inspiration-dice-row > .inspiration-dice-action-items > .inspiration-dice-input > .hidden{
+    display: none;
+}
+
+.inspiration-dice > .inspiration-dice-row > .inspiration-dice-action-items > .hidden{
+    display: none;
+}

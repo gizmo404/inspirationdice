@@ -1,0 +1,32 @@
+<hr>
+<div class="inspiration-dice">
+	<h3 class="inspiration-dice-title">{{localized.inspirationDiceTitle}}</h3>
+	<div class="inspiration-dice-row flexrow">
+		<span class="number-inspiration-dice">
+			<label id="lp-numberOfInspirationDice">{{currentSettings.numberOfPoints}}</label>
+		</span>
+		<span class="inspiration-dice-action-items">
+			<a
+				id="lp-gmRoll"
+				class="lpGmRoll-{{currentSettings.actorAppId}} item-image rollable{{#if currentSettings.isGM}}{{else}} hidden {{/if}} "
+				title="{{localized.gmRollTitle}}"
+			>
+				<i class="fa fa-dice-d6"></i>
+			</a>
+			<a id="lp-openConsume" class="lpOpenConsume-{{currentSettings.actorAppId}} item-image" title="{{localized.playerConsumeTitle}}">
+				<i class="fa fa-bell"></i>
+			</a>
+			<div class="inspiration-dice-input">
+				<input
+					id="lp-howManyPoints"
+					class="lpHowManyPoints-{{currentSettings.actorAppId}} inspiration-dice-consume hidden"
+					placeholder="{{localized.consumePlaceholder}}"
+					type="text"
+					data-dtype="Number"
+					maxlength="{{currentSettings.numberOfPoints}}"
+				/>
+			</div>
+		</span>
+	</div>
+</div>
+<hr>

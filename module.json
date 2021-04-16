@@ -1,13 +1,13 @@
 {
-    "name": "luckpoints",
-    "title": "Luck Points",
-    "description": "An alternative to inspiration. The intent of the module is to give your players luck points for playing their character. They can hoard as many luck points as they want.",
-    "author": "jakvike",
-    "version": "0.0.6",
-    "minimumCoreVersion": "0.7.7",
+    "name": "inspirationdice",
+    "title": "Inspiration Dice",
+    "description": "An alternative to inspiration. The intent of the module is to give your players inspiration dice for playing their character. The dice increases in size .",
+    "author": "gizmo404",
+    "version": "0.0.1",
+    "minimumCoreVersion": "0.7.9",
     "esmodules": ["setup.js"],
     "system": "dnd5e",
-    "styles":["./styles/luckpoints.css"],
+    "styles":["./styles/inspirationdice.css"],
     "languages": [
       {
         "lang": "en",
@@ -15,7 +15,7 @@
         "path": "lang/en.json"
       }
     ],
-    "url": "https://github.com/jakvike/luckpoints",    
-    "manifest":"https://raw.githubusercontent.com/jakvike/luckpoints/master/module.json",
-    "download":"https://github.com/jakvike/luckpoints/archive/master.zip"
+    "url": "https://github.com/gizmo404/luckpoints",    
+    "manifest":"https://raw.githubusercontent.com/gizmo404/luckpoints/master/module.json",
+    "download":"https://github.com/jakvike/gizmo404/archive/master.zip"
   }

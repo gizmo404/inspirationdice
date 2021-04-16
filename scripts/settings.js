@@ -1,22 +1,22 @@
-export class LuckPointSettings {
+export class InspirationDiceSettings {
 	static registerSettings() {
-		if (!CONFIG.luckPointSettings) {
-			let luckPointsConfig = {
+		if (!CONFIG.inspirationDiceSettings) {
+			let inspirationDiceConfig = {
 				currentSettings: {
 					numberOfPoints: 0,
 				},
-				templatesPath: '/modules/luckpoints/templates',
+				templatesPath: '/modules/inspirationdice/templates',
 			};
-			CONFIG.luckPointSettings = luckPointsConfig;
+			CONFIG.inspirationDiceSettings = inspirationDiceConfig;
 		}
 	}
 
 	static registerLocalizedSettings() {
-		CONFIG.luckPointSettings.localized = {
-			luckPointsTitle: game.i18n.localize('LUCKPOINTS.LuckPointsTitle'),
-			gmRollTitle: game.i18n.localize('LUCKPOINTS.GMRollTitle'),
-			playerConsumeTitle: game.i18n.localize('LUCKPOINTS.PlayerConsumeTitle'),
-			consumePlaceholder: game.i18n.localize('LUCKPOINTS.ConsumenPlaceholder')
+		CONFIG.inspirationDiceSettings.localized = {
+			inspirationDiceTitle: game.i18n.localize('INSPIRATIONDICE.InspirationDiceTitle'),
+			gmRollTitle: game.i18n.localize('INSPIRATIONDICE.GMRollTitle'),
+			playerConsumeTitle: game.i18n.localize('INSPIRATIONDICE.PlayerConsumeTitle'),
+			consumePlaceholder: game.i18n.localize('INSPIRATIONDICE.ConsumenPlaceholder')
 		};
 	}
 }
