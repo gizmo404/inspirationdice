@@ -15,7 +15,7 @@
         "path": "lang/en.json"
       }
     ],
-    "url": "https://github.com/gizmo404/luckpoints",    
-    "manifest":"https://raw.githubusercontent.com/gizmo404/luckpoints/master/module.json",
-    "download":"https://github.com/jakvike/gizmo404/archive/master.zip"
+    "url": "https://github.com/gizmo404/inspirationdice",    
+    "manifest":"https://raw.githubusercontent.com/gizmo404/inspirationdice/master/module.json",
+    "download":"https://github.com/gizmo404/inspirationdice/archive/master.zip"
   }
