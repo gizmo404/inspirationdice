@@ -1,14 +1,14 @@
-import { LuckPointSettings } from './scripts/settings.js';
-import { LuckPoints } from './scripts/luckpoints.js';
+import { InspirationDiceSettings } from './scripts/settings.js';
+import { InspirationDice } from './scripts/luckpoints.js';
 
 Hooks.once('init', async function () {
-	LuckPointSettings.registerSettings();
+	InspirationDiceSettings.registerSettings();
 });
 
 Hooks.once('ready', async () => {
-	LuckPointSettings.registerLocalizedSettings();
+	InspirationDiceSettings.registerLocalizedSettings();
 });
 
 Hooks.on('renderActorSheet', function (dndSheet, html) {
-	LuckPoints.onRenderActorSheet(dndSheet, html);
+	InspirationDice.onRenderActorSheet(dndSheet, html);
 });

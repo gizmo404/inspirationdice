@@ -1,6 +1,6 @@
 {
-    "LUCKPOINTS.LuckPointsTitle":"Inspiration Die",
-    "LUCKPOINTS.GMRollTitle":"1d6 GM Roll to add Luck Points",
-    "LUCKPOINTS.PlayerConsumeTitle":"Open to Roll Inspiration Die.",
-    "LUCKPOINTS.ConsumenPlaceholder": "Spend your Inspiration Die?"
+    "INSPIRATIONDICE.InspirationDiceTitle":"Inspiration Die",
+    "INSPIRATIONDICE.GMRollTitle":"1d6 GM Roll to add Luck Points",
+    "INSPIRATIONDICE.PlayerConsumeTitle":"Open to Roll Inspiration Die.",
+    "INSPIRATIONDICE.ConsumenPlaceholder": "Spend your Inspiration Die?"
 }
